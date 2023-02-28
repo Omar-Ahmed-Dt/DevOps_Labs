@@ -1,13 +1,13 @@
 version: '3'
 
 services:
-    apache1:
+    app1:
           container_name: apache_1 
           image: omar9289/apache 
           ports:
             - 9090:8080
 
-    apache2:
+    app2:
           container_name: apache_2
           ports:
             - 8080:8080
