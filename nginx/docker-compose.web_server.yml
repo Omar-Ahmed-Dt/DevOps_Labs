@@ -1,0 +1,10 @@
+version: '3'
+services:
+    web_server:
+        image: nginx
+        container_name: nginx
+        ports:
+          - 8080:80
+        volumes:
+          - /home/ubuntu/nginx/config/nginx.conf:/etc/nginx/nginx.conf
+          - /home/ubuntu/nginx/mysite/:/usr/share/nginx/html/
