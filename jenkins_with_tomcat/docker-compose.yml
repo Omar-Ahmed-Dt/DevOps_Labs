@@ -4,7 +4,7 @@ services:
     image: jenkins/jenkins
     volumes:
       - ./jenkins:/var/jenkins_home:rw
-      - ./war:/mnt/:rw
+      - ./war:/mnt/:rw    # from jenkins >> execute shell >> cp target/*.war /mnt >> {1}
     ports:
       - 8080:8080
     container_name: jenkins
@@ -25,4 +25,4 @@ services:
     depends_on:
       - jenkins
     volumes:
-       - ./war/:/usr/local/tomcat/webapps
+       - ./war/:/usr/local/tomcat/webapps     # /usr/local/tomcat/ = $(CATALINA_HOME), in this path , will deploy a new pkg (*.war) >> {2}
