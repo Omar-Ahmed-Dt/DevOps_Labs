@@ -9,14 +9,6 @@ services:
       - 8080:8080
     container_name: jenkins
     
-  artifactory:
-    image: mzain/artifactory-oss:5.4.4
-    ports:
-      - "9090:8081"
-    container_name: artifactory
-    volumes:
-      - ./artifactory:/var/opt/jfrog/artifactory:rw  
-  
   tomcat:
     image: mzain/tomcat
     ports:
